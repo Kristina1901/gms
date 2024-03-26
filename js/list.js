@@ -5,6 +5,7 @@ function getDeviceType() {
     return "desktop";
   }
 }
+
 let productsData = [
   {
     id: 1,
@@ -43,13 +44,19 @@ let productsData = [
     name: "জেঙ্গা খেলা",
   },
 ];
+
 let totalOrder = 0;
 document.addEventListener("DOMContentLoaded", function () {
   let productList = document.querySelector(".products__list");
-  let clickCounts = JSON.parse(localStorage.getItem("clickCounts")) || {};
-  let storedTotalOrder = parseInt(localStorage.getItem("totalOrder")) || 0;
+  let clickCounts = JSON.parse(sessionStorage.getItem("clickCounts")) || {};
+  let storedTotalOrder = parseInt(sessionStorage.getItem("totalOrder")) || 0;
   totalOrder = storedTotalOrder;
-
+  if (Object.keys(clickCounts).length !== 0) {
+    totalOrderNumber.style.display = "flex";
+    totalOrderNumber.innerHTML = totalOrder;
+    totalOrderNumber1.style.display = "flex";
+    totalOrderNumber1.innerHTML = totalOrder;
+  }
   function renderProducts(startIndex, count) {
     for (let i = startIndex; i < startIndex + count; i++) {
       if (i >= productsData.length) {
@@ -79,13 +86,13 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleBuyButtonClick(event) {
     let productId = event.target.getAttribute("data-product-id");
 
-    if (clickCounts[productId]) {
+    if (clickCounts[productId] !== undefined) {
       clickCounts[productId]++;
     } else {
       clickCounts[productId] = 1;
     }
     increaseTotal();
-    localStorage.setItem("clickCounts", JSON.stringify(clickCounts));
+    sessionStorage.setItem("clickCounts", JSON.stringify(clickCounts));
   }
 
   function updateItemCount() {
@@ -113,13 +120,15 @@ document.addEventListener("DOMContentLoaded", function () {
     renderProducts(loadedItems, 6);
   });
 });
+
 let totalOrderNumber = document.getElementById("totalOrder");
 let totalOrderNumber1 = document.getElementById("totalOrder1");
+
 function increaseTotal() {
   totalOrder += 1;
   totalOrderNumber.style.display = "flex";
   totalOrderNumber.innerHTML = totalOrder;
   totalOrderNumber1.style.display = "flex";
   totalOrderNumber1.innerHTML = totalOrder;
-  localStorage.setItem("totalOrder", totalOrder.toString());
+  sessionStorage.setItem("totalOrder", totalOrder.toString());
 }

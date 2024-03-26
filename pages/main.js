@@ -1,7 +1,7 @@
 const currentYear = new Date().getFullYear();
 document.getElementById("year").innerText = currentYear;
 document.getElementById("year1").innerText = currentYear;
-let clickCounts = JSON.parse(localStorage.getItem("clickCounts")) || {};
+let clickCounts = JSON.parse(sessionStorage.getItem("clickCounts")) || {};
 let productsData = [
   {
     id: 1,
@@ -90,16 +90,16 @@ productIdFromStorage.forEach((productId) => {
 function decreaseQuantity(productId) {
   if (clickCounts[productId] > 1) {
     clickCounts[productId]--;
-    updateLocalStorageAndDisplay(productId);
+    updateSessionStorageAndDisplay(productId);
   } else if (clickCounts[productId] === 1) {
     clickCounts[productId]--;
-    updateLocalStorageAndDisplay(productId);
+    updateSessionStorageAndDisplay(productId);
   }
   updateTotalCountByProducts();
 }
 function increaseQuantity(productId) {
   clickCounts[productId]++;
-  updateLocalStorageAndDisplay(productId);
+  updateSessionStorageAndDisplay(productId);
   updateTotalCountByProducts();
 }
 function updateTotalCountByProducts() {
@@ -110,8 +110,8 @@ function updateTotalCountByProducts() {
   totalCountByProducts = totalCount;
   updateTotalOrderDisplay();
 }
-function updateLocalStorageAndDisplay(productId) {
-  localStorage.setItem("clickCounts", JSON.stringify(clickCounts));
+function updateSessionStorageAndDisplay(productId) {
+  sessionStorage.setItem("clickCounts", JSON.stringify(clickCounts));
   let updatedItem = document.querySelector(
     `.buying__list-item-quantity-number[data-product-id="${productId}"]`
   );
@@ -137,13 +137,13 @@ function removeItem(productId) {
     .closest(".buying__list-item");
   listItemToRemove.remove();
   delete clickCounts[productId];
-  updateLocalStorageAndDisplayAfterRemoval();
+  updateSessionStorageAndDisplayAfterRemoval();
   updateTotalCountByProducts();
   updateTotalOrderDisplay();
 }
 
-function updateLocalStorageAndDisplayAfterRemoval() {
-  localStorage.setItem("clickCounts", JSON.stringify(clickCounts));
+function updateSessionStorageAndDisplayAfterRemoval() {
+  sessionStorage.setItem("clickCounts", JSON.stringify(clickCounts));
 }
 function updateTotalOrderDisplay() {
   let totalOrderNumber = document.getElementById("totalOrder");
@@ -159,6 +159,8 @@ function updateTotalOrderDisplay() {
     totalOrderNumber.innerHTML = totalOrder;
     totalOrderNumber1.innerHTML = totalOrder;
     totalOrderNumber1.style.display = totalOrder > 0 ? "flex" : "none";
+    totalOrderNumber1.style.display = totalOrder > 0 ? "flex" : "none";
   }
 }
+
 updateTotalOrderDisplay();
