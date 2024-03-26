@@ -1,0 +1,70 @@
+.communication {
+  background: #ff9838;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.communication .container {
+  align-items: start;
+}
+.communication__title-mobile {
+  color: #fff;
+  font-family: "Montserrat";
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -1.2px;
+  margin-bottom: 44px;
+  width: 100%;
+  text-align: center;
+}
+.communication__address {
+  color: #fff;
+  font-family: "Montserrat";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: -0.2px;
+  width: 224px;
+}
+.communication__map {
+  display: none;
+}
+.communication__title-desktop {
+  display: none;
+}
+.communication__address-geo {
+  padding-right: 90px;
+}
+@media screen and (min-width: 1440px) {
+  .communication__title {
+    margin-bottom: 68px;
+  }
+  .communication__wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .communication__map {
+    display: block;
+  }
+  .communication__title-mobile {
+    display: none;
+  }
+  .communication__title-desktop {
+    display: block;
+    color: #fff;
+    font-family: "Montserrat";
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: -1.2px;
+    margin-bottom: 68px;
+  }
+  .communication__address-main {
+    width: 364px;
+  }
+}

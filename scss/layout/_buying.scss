@@ -1,0 +1,311 @@
+.buying {
+  background: #2d2d2d;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.buying .container {
+  align-items: start;
+}
+.buying__title {
+  color: #fff;
+  font-family: "Montserrat";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 9px;
+}
+.buying__subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Montserrat";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  margin-bottom: 38px;
+}
+.buying__head {
+  display: none;
+}
+.buying__head li {
+  color: #fff;
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.buying__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.buying__list-item {
+  border-radius: 10px;
+  background: #fff;
+  padding-top: 40px;
+  padding-bottom: 50px;
+  padding-left: 20px;
+  width: 335px;
+  margin-bottom: 51px;
+  padding-right: 10px;
+}
+.buying__list-item:last-child {
+  margin-bottom: 0;
+}
+.buying__list-item-text {
+  color: #2d2d2d;
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 13px;
+  justify-content: space-between;
+}
+.buying__list-item-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.buying__list-item-button-close {
+  width: 12px;
+  height: 12px;
+  border: none;
+  background-color: transparent;
+  background-image: url("../../img/Cross.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.buying__list-item-name {
+  color: #161c2d;
+  font-family: "Montserrat";
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.2px;
+}
+.buying__list-item-wrapper {
+  width: 183px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.buying__list-item-line {
+  color: #2d2d2d;
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.buying__list-item-line {
+  display: flex;
+  margin-top: 50px;
+  align-items: center;
+}
+.buying__list-item-priece {
+  color: #161c2d;
+  font-family: "Montserrat";
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.2px;
+  margin-left: 90px;
+  min-width: 103px;
+}
+.buying__list-item-button {
+  background-color: #e7e9ed;
+  border: none;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.minus {
+  background-image: url("../../img/minus.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 9px;
+  height: 9px;
+  display: block;
+}
+.plus {
+  background-image: url("../../img/plus.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 9px;
+  height: 9px;
+  display: block;
+}
+.buying__list-item-quantity-number {
+  width: 50px;
+  height: 33px;
+  border-radius: 3px;
+  border: 1px solid #d5d7dd;
+  color: #161c2d;
+  text-align: center;
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 29px; /* 161.111% */
+  letter-spacing: -0.2px;
+  background: #fff;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.buying__list-item-quantity {
+  display: flex;
+  margin-left: 61px;
+}
+.buying__wrapper {
+  margin-top: 51px;
+  display: flex;
+  flex-direction: column;
+}
+.buying__buy {
+  color: #161c2d;
+  text-align: center;
+  font-family: "Montserrat";
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+  border-radius: 8px;
+  background: #fff;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  display: block;
+  width: 200px;
+  margin-bottom: 30px;
+}
+.buying__review {
+  color: #fff;
+  text-align: center;
+  font-family: "Montserrat";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border-radius: 12px;
+  background: #ff9838;
+  width: 200px;
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.buying__list-item-button-close-desktop {
+  display: none;
+}
+.buying__list-item-button-close-desktop-wrapper {
+  display: none;
+}
+@media screen and (min-width: 1440px) {
+  .buying__list-item-info {
+    justify-content: start;
+  }
+  .buying__title {
+    margin-bottom: 22px;
+  }
+  .buying__subtitle {
+    margin-bottom: 31px;
+  }
+  .buying__head {
+    width: 927px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 43px;
+  }
+  .buying__list-item-wrapper {
+    margin-left: 13px;
+  }
+  .buying__head-list {
+    display: flex;
+    width: 490px;
+    justify-content: space-between;
+  }
+  .buying__list-item {
+    width: 1138px;
+  }
+  .buying__list-item-text {
+    display: none;
+  }
+  .buying__list-item-info {
+    width: 399px;
+  }
+  .buying__list-item {
+    display: flex;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    padding-left: 28px;
+    padding-right: 31px;
+  }
+  .buying__list-item-header {
+    display: none;
+  }
+  .buying__list-item-priece {
+    margin-left: 0;
+  }
+  .buying__list-item-line {
+    margin-top: 0;
+  }
+  .buying__list-item-quantity {
+    margin: 0;
+  }
+  .buying__list-item-info-wrapper {
+    display: flex;
+    width: 612px;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 22px;
+  }
+  .buying__list-item-button-close {
+    display: none;
+  }
+  .buying__list-item-button-close-desktop {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border: none;
+    background-color: transparent;
+    background-image: url("../../img/Cross.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .buying__list-item-button-close-desktop-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    width: 90px;
+  }
+  .buying__list-item {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .buying__buy {
+    margin-bottom: 0;
+  }
+  .buying__wrapper {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .buying {
+    padding-top: 90px;
+    padding-bottom: 74px;
+  }
+}

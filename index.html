@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>খেলা</title>
+    <link rel="stylesheet" href="css/main.min.css" />
+    <link rel="icon" type="image/svg+xml" href="favicon.png" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header__mobile">
+          <button class="burger"></button>
+          <ul class="header__mobile-menu">
+            <li class="header__mobile-menu-item"><a>আমাদের সম্পর্কে</a></li>
+            <li class="header__mobile-menu-item"><a href="#shop">দোকান</a></li>
+            <li class="header__mobile-menu-item"><a>পর্যালোচনা</a></li>
+            <li class="header__mobile-menu-item">
+              <a href="#contacts">যোগাযোগ</a>
+            </li>
+          </ul>
+          <a class="logo" href="./index.html"></a>
+          <a class="busket" href="./pages/order.html"
+            ><span class="totalOrder" id="totalOrder"></span
+          ></a>
+        </div>
+        <div class="header__desktop">
+          <a class="logo" href="./index.html"></a>
+          <ul class="header__desktop-menu">
+            <li class="header__desktop-menu-item"><a>আমাদের সম্পর্কে</a></li>
+            <li class="header__desktop-menu-item"><a href="#shop">দোকান</a></li>
+            <li class="header__desktop-menu-item"><a>পর্যালোচনা</a></li>
+            <li class="header__desktop-menu-item">
+              <a href="#contacts">যোগাযোগ</a>
+            </li>
+          </ul>
+          <a class="busket" href="./pages/order.html"
+            ><span class="totalOrder" id="totalOrder1"></span
+          ></a>
+        </div>
+      </div>
+    </header>
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero__title">
+          মেয়াদহীন চেয়ে নামিয়ে নেওয়া টেবিল খেলার জগতে অবতীর্ণ হোন!
+        </h1>
+        <p class="hero__subtitle">
+          আমাদের পরিবারের সবার জন্য খেলার বিভিন্ন অভিজ্ঞতা সহ অসীম সম্ভাবনা খোলা
+          নিন।
+        </p>
+        <a class="hero__button" href="#shop">পর্যালোচনা</a>
+      </div>
+    </section>
+    <section class="about">
+      <div class="container">
+        <h2 class="about__title">আমাদের সম্পর্কে</h2>
+        <p class="about__subtitle" id="changeText"></p>
+      </div>
+    </section>
+    <section class="products" id="shop">
+      <div class="container">
+        <h2 class="products__title">সমস্ত পণ্য অন্বেষণ করুন</h2>
+        <ul class="products__list"></ul>
+        <button class="products__buttton-getAllProducts" id="load">
+          সব পণ্য চেক করুন
+        </button>
+      </div>
+    </section>
+    <section class="recommendation">
+      <div class="container">
+        <h2 class="visually-hidden">পর্যালোচনা</h2>
+        <ul class="recommendation__list">
+          <li class="recommendation__list-item">
+            <img
+              src="./img/quote.svg"
+              alt="quote"
+              width="38"
+              height="31"
+              class="recommendation__list-item-quote-sign"
+            />
+            <img src="./img/Stars.svg" width="109" height="19" alt="stars" />
+            <p class="recommendation__list-item-text">
+              “এই বোর্ড গেম সাইটটি অসাধারণ! বিশাল গেম সিলেকশন এবং দ্রুত
+              ডেলিভারি। সুপারিশ করছি!“
+            </p>
+            <p class="recommendation__list-item-name">তিতাস</p>
+          </li>
+          <li class="recommendation__list-item">
+            <img
+              src="./img/quote.svg"
+              alt="quote"
+              width="38"
+              height="31"
+              class="recommendation__list-item-quote-sign"
+            />
+            <img src="./img/Stars.svg" width="109" height="19" alt="stars" />
+            <p class="recommendation__list-item-text">
+              “এই বোর্ড গেম সাইটে কেনা পণ্যে খুব সন্তুষ্ট। সব সুন্দরভাবে কাজ
+              করে, খেলা গুণগতভাবে ভাল। অবশ্যই আর অর্ডার করবো!”
+            </p>
+            <p class="recommendation__list-item-name">অরুণ</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="communication" id="contacts">
+      <div class="container">
+        <h2 class="communication__title-mobile">আমাদের সম্পর্কে</h2>
+        <div class="communication__wrapper">
+          <div class="communication__address-main">
+            <div class="communication__address">
+              <h2 class="communication__title-desktop">যোগাযোগ</h2>
+              <p class="communication__address-geo">
+                10 নং স্ট্রিট ঢাকা বাংলাদেশ
+              </p>
+              <p>+880 1547 881110</p>
+            </div>
+          </div>
+          <img
+            src="img/map.png"
+            width="558"
+            height="394"
+            alt="map"
+            class="communication__map"
+          />
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__mob">
+          <a class="footer__logo" href="./index.html"></a>
+          <p class="footer__text">
+            © <span id="year"></span> কপিরাইট, সমস্ত অধিকার সংরক্ষিত
+          </p>
+          <div class="footer__main">
+            <ul class="footer__main-sublist">
+              <li class="footer__main-sublist-list"><a>আমাদের সম্পর্কে</a></li>
+              <li class="footer__main-sublist-list"><a>আমাদের সম্পর্কে</a></li>
+              <li class="footer__main-sublist-list">
+                <a href="#shop">দোকান</a>
+              </li>
+              <li class="footer__main-sublist-list"><a>পর্যালোচনা</a></li>
+              <li class="footer__main-sublist-list">
+                <a href="#contacts">যোগাযোগ</a>
+              </li>
+            </ul>
+            <ul class="footer__main-sublist">
+              <li class="footer__main-sublist-list">
+                <a href="./policy/policy.html">গোপনীয়তা নীতি</a>
+              </li>
+              <li class="footer__main-sublist-list">
+                <a href="./policy/policy.html">কুকি নীতি</a>
+              </li>
+              <li class="footer__main-sublist-list">
+                <a href="./policy/terms.html">শর্তাবলী ও শর্তাদি</a>
+              </li>
+            </ul>
+            <ul class="footer__main-sublist">
+              <li class="footer__main-sublist-list">
+                <a href="#contacts">যোগাযোগ</a>
+              </li>
+              <li class="footer__main-sublist-list"><a>10 নং স্ট্রিট</a></li>
+              <li class="footer__main-sublist-list"><a>ঢাকা</a></li>
+              <li class="footer__main-sublist-list"><a>বাংলাদেশ</a></li>
+              <li class="footer__main-sublist-list">+880 1547 881110</li>
+            </ul>
+            <ul class="footer__main-sublist-icons">
+              <li>
+                <a class="footer__main-sublist-icons-youtube"></a>
+              </li>
+              <li>
+                <a class="footer__main-sublist-icons-facebook"></a>
+              </li>
+              <li>
+                <a class="footer__main-sublist-icons-twitter"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__desktop">
+          <ul class="footer__main-sublist">
+            <li class="footer__main-sublist-list logo">
+              <a class="footer__logo" href="./index.html"></a>
+            </li>
+            <li class="footer__main-sublist-list">
+              <p class="footer__text">
+                © <span id="year1"></span> কপিরাইট, সমস্ত অধিকার সংরক্ষিত
+              </p>
+            </li>
+          </ul>
+          <ul class="footer__main-sublist">
+            <li class="footer__main-sublist-list"><a>আমাদের সম্পর্কে</a></li>
+            <li class="footer__main-sublist-list"><a>আমাদের সম্পর্কে</a></li>
+            <li class="footer__main-sublist-list"><a href="#shop">দোকান</a></li>
+            <li class="footer__main-sublist-list"><a>পর্যালোচনা</a></li>
+            <li class="footer__main-sublist-list">
+              <a href="#contacts">যোগাযোগ</a>
+            </li>
+          </ul>
+          <ul class="footer__main-sublist">
+            <li class="footer__main-sublist-list">
+              <a href="./policy/policy.html">গোপনীয়তা নীতি</a>
+            </li>
+            <li class="footer__main-sublist-list">
+              <a href="./policy/cookie.html">কুকি নীতি</a>
+            </li>
+            <li class="footer__main-sublist-list">
+              <a href="./policy/terms.html">শর্তাবলী ও শর্তাদি</a>
+            </li>
+          </ul>
+          <ul class="footer__main-sublist">
+            <li class="footer__main-sublist-list">
+              <a href="#contacts">যোগাযোগ</a>
+            </li>
+            <li class="footer__main-sublist-list"><a>10 নং স্ট্রিট</a></li>
+            <li class="footer__main-sublist-list"><a>ঢাকা</a></li>
+            <li class="footer__main-sublist-list"><a>বাংলাদেশ</a></li>
+            <li class="footer__main-sublist-list">+880 1547 881110</li>
+          </ul>
+          <ul class="footer__main-sublist-icons">
+            <li>
+              <a class="footer__main-sublist-icons-youtube"></a>
+            </li>
+            <li>
+              <a class="footer__main-sublist-icons-facebook"></a>
+            </li>
+            <li>
+              <a class="footer__main-sublist-icons-twitter"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal" id="cookieBar">
+        <div class="modal__content">
+          <p class="modal__text">
+            আমাদের পৃষ্ঠাটি আপনার অভিজ্ঞতা উন্নত করতে কুকিজ ব্যবহার করে। আপনি
+            চাইলে তাদের নিষ্ক্রিয় করতে পারেন, কিন্তু এটি ওয়েবসাইটের কিছু
+            কার্যক্ষমতা সীমিত করতে পারে। আমাদের কুকি নীতি দেখুন।
+          </p>
+          <div class="modal__wrapper">
+            <button class="modal__button-acceptAll" id="cookieButtonAccept">
+              সব কুকিজকে গ্রহণ করুন
+            </button>
+            <button class="modal__button-settings" id="cookieButtonSettings">
+              কুকিজের সেটিংস
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="cookieBarSettings">
+        <div class="modal__content-settings">
+          <h3 class="modal__settings-title">কুকিজের সেটিংস</h3>
+          <p class="modal__settings-text">
+            কুকিস হচ্ছে সাইট দ্বারা প্রেরিত এবং ওয়েব ব্রাউজারে আপনার কম্পিউটারে
+            সংরক্ষিত ছোট ডেটা প্রতি সময় আপনি ওয়েবে অনুপ্রবেশ করছেন যাবতীয়।
+            প্রতিটি বার্তা একটি ক্ষুদ্র ফাইলের মধ্যে সংরক্ষণ করা হয়, যা কুকি
+            বলা হয়। যখন আপনি সার্ভার থেকে অন্য পৃষ্ঠা অনুরোধ করেন, আপনার
+            ব্রাউজারটি কুকিটি আবার সার্ভারে ফিরিয়ে পাঠায়। কুকিস হলো এমন একটি
+            বিশ্বস্ত পদ্ধতি যাতে সাইটগুলি ব্যবহারকারীর সংজ্ঞা মনে রাখতে বা
+            ব্রাউজিং এর সময় ব্যবহারকারীর ক্রিয়াকলাপ নিবন্ধন করতে পারে।
+          </p>
+          <div class="modal__settings-wrapper">
+            <button class="modal__settings-button" id="performanceButton">
+              <span class="modal__settings-check" id="performance"></span>
+              <span class="modal__settings-label">কার্যক্ষমতা</span>
+            </button>
+            <button class="modal__settings-button" id="statisticsButton">
+              <span class="modal__settings-check" id="statistics"></span>
+              <span class="modal__settings-label">পরিসংখ্যান</span>
+            </button>
+            <button class="modal__settings-button" id="marketingButton">
+              <span class="modal__settings-check" id="marketing"></span>
+              <span class="modal__settings-label">মার্কেটিং</span>
+            </button>
+          </div>
+          <p class="modal__settings-warning" id="warning">বেছে নাও</p>
+          <button class="modal__settings-button-confirm" id="confirmButton">
+            পছন্দ নিশ্চিত করুন।
+          </button>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/list.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/cookie.js"></script>
+  </body>
+</html>

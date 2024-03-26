@@ -1,0 +1,132 @@
+a {
+  cursor: pointer;
+}
+.logo {
+  width: 157px;
+  height: 44px;
+  background-image: url("../../img/logo.svg");
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.burger {
+  width: 24px;
+  height: 32px;
+  background-image: url("../../img/menu.svg");
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.busket {
+  width: 30px;
+  height: 30px;
+  background-image: url("../../img/cart.svg");
+  display: block;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.header__mobile-menu {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  padding: 20px;
+  display: none;
+}
+.header__mobile-menu-item {
+  margin-bottom: 15px;
+}
+.header__mobile-menu-item:last-child {
+  margin-bottom: 0;
+}
+.header__mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  width: 100%;
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+.header__desktop {
+  display: none;
+}
+.busket {
+  position: relative;
+}
+.totalOrder {
+  background: #68d585;
+  color: #fff;
+  text-align: center;
+  font-family: "Montserrat";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: -8px;
+  bottom: 12px;
+  display: none;
+}
+@media screen and (min-width: 1440px) {
+  .header__mobile {
+    display: none;
+  }
+  .header__desktop {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  .header__mobile-menu-item {
+    color: #000;
+    font-family: "Poppins";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .header__mobile-menu-item a {
+    color: #000;
+    font-family: "Poppins";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .header__desktop-menu-item {
+    display: block;
+    height: 44px;
+  }
+  .header__desktop-menu-item a {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    height: 44px;
+    color: #000;
+  }
+  .header__desktop-menu {
+    width: 541px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header__desktop-menu-item a {
+    padding-top: 20px;
+    display: block;
+  }
+}
