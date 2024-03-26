@@ -31,7 +31,7 @@
   margin-bottom: 80px;
 }
 .recommendation__list-item {
-  height: 389px;
+  min-height: 389px;
   position: relative;
   padding-top: 158px;
 }
@@ -52,6 +52,7 @@
   }
   .recommendation__list-item {
     width: 496px;
+    max-height: 389px;
   }
   .recommendation__list {
     display: flex;
