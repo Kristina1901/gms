@@ -935,6 +935,7 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 100px;
 }
 
 .modal__content {
@@ -1165,6 +1166,9 @@ a {
   }
   .modal__settings-wrapper {
     margin-bottom: 48px;
+  }
+  .modal {
+    padding-top: 0;
   }
 }
 .buying {
