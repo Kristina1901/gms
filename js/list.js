@@ -44,7 +44,22 @@ let productsData = [
     name: "জেঙ্গা খেলা",
   },
 ];
-
+function showToast(message, duration = 3000) {
+  const toastContainer = document.getElementById("toast-container");
+  const toast = document.createElement("div");
+  toast.classList.add("toast");
+  toast.innerText = message;
+  toastContainer.appendChild(toast);
+  setTimeout(() => {
+    toast.classList.add("show");
+    setTimeout(() => {
+      toast.classList.remove("show");
+      setTimeout(() => {
+        toastContainer.removeChild(toast);
+      }, 500);
+    }, duration);
+  }, 100);
+}
 let totalOrder = 0;
 document.addEventListener("DOMContentLoaded", function () {
   let productList = document.querySelector(".products__list");
@@ -85,7 +100,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleBuyButtonClick(event) {
     let productId = event.target.getAttribute("data-product-id");
-
     if (clickCounts[productId] !== undefined) {
       clickCounts[productId]++;
     } else {
@@ -93,6 +107,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     increaseTotal();
     sessionStorage.setItem("clickCounts", JSON.stringify(clickCounts));
+    showToast(
+      `
+    পণ্য সফলভাবে যোগ করা হয়েছে`,
+      2000
+    );
   }
 
   function updateItemCount() {
@@ -104,9 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   renderProducts(0, 6);
-
   window.addEventListener("resize", updateItemCount);
-
   productList.addEventListener("click", function (event) {
     if (event.target.classList.contains("products__list-item-priceinfo-buy")) {
       handleBuyButtonClick(event);

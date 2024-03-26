@@ -4,7 +4,8 @@
   padding-bottom: 60px;
 }
 .recommendation__list-item-quote-sign {
-  margin-bottom: 127px;
+  position: absolute;
+  top: 0;
 }
 .recommendation__list-item-text {
   color: #fff;
@@ -28,6 +29,11 @@
 }
 .recommendation__list-item:first-child {
   margin-bottom: 80px;
+}
+.recommendation__list-item {
+  height: 389px;
+  position: relative;
+  padding-top: 158px;
 }
 @media screen and (min-width: 1440px) {
   .recommendation {

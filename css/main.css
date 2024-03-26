@@ -599,7 +599,8 @@ a {
 }
 
 .recommendation__list-item-quote-sign {
-  margin-bottom: 127px;
+  position: absolute;
+  top: 0;
 }
 
 .recommendation__list-item-text {
@@ -626,6 +627,12 @@ a {
 
 .recommendation__list-item:first-child {
   margin-bottom: 80px;
+}
+
+.recommendation__list-item {
+  height: 389px;
+  position: relative;
+  padding-top: 158px;
 }
 
 @media screen and (min-width: 1440px) {
@@ -1563,4 +1570,25 @@ a {
   .policy__text {
     margin-bottom: 30px;
   }
+}
+#toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.toast {
+  background: white;
+  color: #000;
+  border: 2px solid #ff9838;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.show {
+  opacity: 1;
 }/*# sourceMappingURL=main.css.map */
