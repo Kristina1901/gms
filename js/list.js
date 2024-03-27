@@ -149,6 +149,3 @@ function increaseTotal() {
   totalOrderNumber1.innerHTML = totalOrder;
   sessionStorage.setItem("totalOrder", totalOrder.toString());
 }
-window.addEventListener("scroll", function() {
-  updateItemCount();
-});
