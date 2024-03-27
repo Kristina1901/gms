@@ -458,6 +458,7 @@ a {
 
 .products__list-item img {
   margin-bottom: 14px;
+  border-radius: 10px;
 }
 
 .products__list-item {
