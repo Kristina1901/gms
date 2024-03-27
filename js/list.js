@@ -44,6 +44,7 @@ let productsData = [
     name: "জেঙ্গা খেলা",
   },
 ];
+
 function showToast(message, duration = 3000) {
   const toastContainer = document.getElementById("toast-container");
   const toast = document.createElement("div");
@@ -60,18 +61,25 @@ function showToast(message, duration = 3000) {
     }, duration);
   }, 100);
 }
+
 let totalOrder = 0;
+
 document.addEventListener("DOMContentLoaded", function () {
   let productList = document.querySelector(".products__list");
   let clickCounts = JSON.parse(sessionStorage.getItem("clickCounts")) || {};
   let storedTotalOrder = parseInt(sessionStorage.getItem("totalOrder")) || 0;
   totalOrder = storedTotalOrder;
+
+  let totalOrderNumber = document.getElementById("totalOrder");
+  let totalOrderNumber1 = document.getElementById("totalOrder1");
+
   if (Object.keys(clickCounts).length !== 0) {
     totalOrderNumber.style.display = "flex";
     totalOrderNumber.innerHTML = totalOrder;
     totalOrderNumber1.style.display = "flex";
     totalOrderNumber1.innerHTML = totalOrder;
   }
+
   function renderProducts(startIndex, count) {
     for (let i = startIndex; i < startIndex + count; i++) {
       if (i >= productsData.length) {
@@ -122,6 +130,15 @@ document.addEventListener("DOMContentLoaded", function () {
     renderProducts(0, itemCount);
   }
 
+  function increaseTotal() {
+    totalOrder += 1;
+    totalOrderNumber.style.display = "flex";
+    totalOrderNumber.innerHTML = totalOrder;
+    totalOrderNumber1.style.display = "flex";
+    totalOrderNumber1.innerHTML = totalOrder;
+    sessionStorage.setItem("totalOrder", totalOrder.toString());
+  }
+
   renderProducts(0, 6);
   window.addEventListener("resize", updateItemCount);
   productList.addEventListener("click", function (event) {
@@ -134,18 +151,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let loadedItems = productList.querySelectorAll(
       ".products__list-item"
     ).length;
-    renderProducts(loadedItems, 6);
+    let deviceType = getDeviceType();
+    let itemCount = deviceType === "mobile" ? 3 : 6;
+
+    renderProducts(loadedItems, itemCount);
   });
 });
-
-let totalOrderNumber = document.getElementById("totalOrder");
-let totalOrderNumber1 = document.getElementById("totalOrder1");
-
-function increaseTotal() {
-  totalOrder += 1;
-  totalOrderNumber.style.display = "flex";
-  totalOrderNumber.innerHTML = totalOrder;
-  totalOrderNumber1.style.display = "flex";
-  totalOrderNumber1.innerHTML = totalOrder;
-  sessionStorage.setItem("totalOrder", totalOrder.toString());
-}
