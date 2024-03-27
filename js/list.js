@@ -121,7 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
     productList.innerHTML = "";
     renderProducts(0, itemCount);
   }
-
   renderProducts(0, 6);
   window.addEventListener("resize", updateItemCount);
   productList.addEventListener("click", function (event) {
@@ -131,11 +130,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document.getElementById("load").addEventListener("click", function () {
-    let loadedItems = productList.querySelectorAll(
-      ".products__list-item"
-    ).length;
+    let loadedItems = productList.querySelectorAll(".products__list-item").length;
     renderProducts(loadedItems, 6);
-  });
+});
 });
 
 let totalOrderNumber = document.getElementById("totalOrder");
