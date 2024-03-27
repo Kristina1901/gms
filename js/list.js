@@ -44,7 +44,6 @@ let productsData = [
     name: "জেঙ্গা খেলা",
   },
 ];
-
 function showToast(message, duration = 3000) {
   const toastContainer = document.getElementById("toast-container");
   const toast = document.createElement("div");
@@ -61,24 +60,18 @@ function showToast(message, duration = 3000) {
     }, duration);
   }, 100);
 }
-
 let totalOrder = 0;
-
 document.addEventListener("DOMContentLoaded", function () {
   let productList = document.querySelector(".products__list");
   let clickCounts = JSON.parse(sessionStorage.getItem("clickCounts")) || {};
   let storedTotalOrder = parseInt(sessionStorage.getItem("totalOrder")) || 0;
   totalOrder = storedTotalOrder;
-  let totalOrderNumber = document.getElementById("totalOrder");
-  let totalOrderNumber1 = document.getElementById("totalOrder1");
-
   if (Object.keys(clickCounts).length !== 0) {
     totalOrderNumber.style.display = "flex";
     totalOrderNumber.innerHTML = totalOrder;
     totalOrderNumber1.style.display = "flex";
     totalOrderNumber1.innerHTML = totalOrder;
   }
-
   function renderProducts(startIndex, count) {
     for (let i = startIndex; i < startIndex + count; i++) {
       if (i >= productsData.length) {
@@ -93,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
          <div>
           <div class="products__list-item-price-info">
             <p class="products__list-item-priceinfo-price">${product.price}</p>
-            <button class="products__list-item-priceinfo-buy" data-product-id="${product.id}">Buy</button>
+            <button class="products__list-item-priceinfo-buy" data-product-id="${product.id}"></button>
           </div>
           <div class="products__list-item-rate">
             <p class="products__list-item-rate-name">${product.name}</p>
@@ -114,7 +107,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     increaseTotal();
     sessionStorage.setItem("clickCounts", JSON.stringify(clickCounts));
-    showToast("Product added successfully", 2000);
+    showToast(
+      `
+    পণ্য সফলভাবে যোগ করা হয়েছে`,
+      2000
+    );
   }
 
   function updateItemCount() {
@@ -134,15 +131,18 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document.getElementById("load").addEventListener("click", function () {
-    let loadedItems = productList.querySelectorAll(".products__list-item").length;
+    let loadedItems = productList.querySelectorAll(
+      ".products__list-item"
+    ).length;
     renderProducts(loadedItems, 6);
   });
 });
 
+let totalOrderNumber = document.getElementById("totalOrder");
+let totalOrderNumber1 = document.getElementById("totalOrder1");
+
 function increaseTotal() {
   totalOrder += 1;
-  let totalOrderNumber = document.getElementById("totalOrder");
-  let totalOrderNumber1 = document.getElementById("totalOrder1");
   totalOrderNumber.style.display = "flex";
   totalOrderNumber.innerHTML = totalOrder;
   totalOrderNumber1.style.display = "flex";
