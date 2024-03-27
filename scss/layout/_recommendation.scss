@@ -43,7 +43,7 @@
   }
   .recommendation__list-item {
     width: 496px;
-    max-height: 389px;
+    max-height: fit-content;
   }
   .recommendation__list {
     display: flex;
