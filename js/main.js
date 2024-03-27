@@ -6,33 +6,3 @@ let text =
 
 let normalizedText = text.normalize("NFC");
 document.getElementById("changeText").innerText = normalizedText;
-
-function checkElementVisibilityItems() {
-  const elements = document.querySelectorAll(".products__list-item");
-
-  elements.forEach((element) => {
-    const rect = element.getBoundingClientRect();
-    const windowHeight =
-      window.innerHeight || document.documentElement.clientHeight;
-
-    if (rect.top <= windowHeight * 0.8) {
-      element.classList.add("appear");
-    }
-  });
-}
-function checkElementVisibility() {
-  const elements = document.querySelectorAll(".recommendation__list-item");
-
-  elements.forEach((element) => {
-    const rect = element.getBoundingClientRect();
-    const windowHeight =
-      window.innerHeight || document.documentElement.clientHeight;
-
-    if (rect.top <= windowHeight * 0.8) {
-      element.classList.add("appear");
-    }
-  });
-}
-
-window.addEventListener("scroll", checkElementVisibilityItems);
-window.addEventListener("scroll", checkElementVisibility);
