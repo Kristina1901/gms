@@ -62,18 +62,18 @@ function showToast(message, duration = 3000) {
   }, 100);
 }
 
-let totalOrder = 0;
-
 document.addEventListener("DOMContentLoaded", function () {
   let productList = document.querySelector(".products__list");
   let clickCounts = JSON.parse(sessionStorage.getItem("clickCounts")) || {};
-  let storedTotalOrder = parseInt(sessionStorage.getItem("totalOrder")) || 0;
-  totalOrder = storedTotalOrder;
+  let totalOrder = Object.values(clickCounts).reduce(
+    (total, count) => total + count,
+    0
+  );
 
   let totalOrderNumber = document.getElementById("totalOrder");
   let totalOrderNumber1 = document.getElementById("totalOrder1");
 
-  if (Object.keys(clickCounts).length !== 0) {
+  if (totalOrder > 0) {
     totalOrderNumber.style.display = "flex";
     totalOrderNumber.innerHTML = totalOrder;
     totalOrderNumber1.style.display = "flex";
